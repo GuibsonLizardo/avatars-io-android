@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AvatarPickerTutorialActivity!</string>
+    <string name="app_name">AvatarPicker</string>
+
+    <string name="crop_label">cropLabel</string>
+    <string name="avatar_picker">Avatar Picker</string>
+</resources>

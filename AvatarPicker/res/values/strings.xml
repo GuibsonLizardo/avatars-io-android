@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AvatarPickerActivity!</string>
+    <string name="app_name">AvatarPicker</string>
+    <string name="crop_label">cropLabel</string>
+
+    <!-- Error messages -->
+    <string name="parsing_exception">Invalid response format</string>
+    <string name="http_exception">Check your internet connection and try again</string>
+    <string name="http_error">Server Problem, Try again</string>
+    
+    <string name="save">Save</string>
+    <string name="discard">Discard</string>
+    <string name="avatar">Avatar</string>
+    <string name="my_avatar">My Avatars</string>
+    <string name="photo_uploaded">Photo uploaded</string>
+    <string name="please_enter_email">Please enter your e-mail</string>
+    <string name="edittext_hint">Enter e-mail</string>
+    <string name="submit">Submit</string>
+
+    <!-- Services -->
+    <string name="txt_facebook">Facebook</string>
+    <string name="txt_upload">Upload</string>
+    <string name="txt_twitter">Twitter</string>
+    <string name="txt_flickr">Flickr</string>
+    <string name="txt_instagram">Instagram</string>
+    <string name="txt_picasa">Picasa</string>
+    <string name="txt_gravatar">Gravatar</string>
+
+</resources>
