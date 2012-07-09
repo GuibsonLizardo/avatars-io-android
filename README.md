@@ -8,7 +8,7 @@ selecting a device photo as your avatar.
 Screenshots
 ====
 
-![image1](https://github.com/chute/avatars-io/raw/master/android/AvatarPicker/screenshots/1.png)![image2](https://github.com/chute/avatars-io/raw/master/android/AvatarPicker/screenshots/2.png)![image3](https://github.com/chute/avatars-io/raw/master/android/AvatarPicker/screenshots/3.png)![image4](https://github.com/chute/avatars-io/raw/master/android/AvatarPicker/screenshots/4.png)
+![image1](https://github.com/chute/avatars-io-android/raw/master/android/AvatarPicker/screenshots/1.png)![image2](https://github.com/chute/avatars-io-android/raw/master/android/AvatarPicker/screenshots/2.png)![image3](https://github.com/chute/avatars-io-android/raw/master/android/AvatarPicker/screenshots/3.png)![image4](https://github.com/chute/avatars-io-android/raw/master/android/AvatarPicker/screenshots/4.png)
 
 Implementation
 ====
