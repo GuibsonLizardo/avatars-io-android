@@ -1,4 +1,3 @@
-
 Introduction to Chute
 ====
 
@@ -15,7 +14,7 @@ You can create a Chute developer account and make a new app in Chute at http://a
 - For the URL you can enter http://getchute.com/ if you don't have a site for your app.
 - For the Callback URL you can use http://getchute.com/oauth/callback if you don't need callbacks for another purpose.
 	
-	![image1](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/1.png)![image2](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/2.png)  
+	![image1](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/1.png)![image2](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/2.png)  
 
 Basic SDK Setup
 ====
@@ -23,7 +22,7 @@ Basic SDK Setup
 * Download the SDK 
 * In Eclipse click File -> Import -> Existing Projects into Workspace
 
-![image3](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/3.png)
+![image3](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/3.png)
 
 * Browse to the downloaded root directory of the downloaded sdk.
 * Check the SDK project and click Finish.
@@ -42,7 +41,7 @@ Basic New Project Setup
 * Open Eclipse and create new Android project by selecting File->New->Android Project.
 * Type the name of the project, it can be anything you like, I'll name it NewProject.
 
-       ![image4](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/4.png)
+       ![image4](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/4.png)
   
 * Select build target. I'll use Android 2.1 API Level 7.  
  
@@ -50,7 +49,7 @@ Basic New Project Setup
   
 * Add a package name. The package name I added is: com.android.newproject
 
-       ![image6](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/6.png)
+       ![image6](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/6.png)
   
 Adding the SDK library to your project
 ====
@@ -61,7 +60,7 @@ Adding the SDK library to your project
 
 * Select Project -> Properties -> Android and add ChuteSDK as a library project.
 
-       ![image7](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/7.png)
+       ![image7](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/7.png)
   
     
 Android manifest setup
