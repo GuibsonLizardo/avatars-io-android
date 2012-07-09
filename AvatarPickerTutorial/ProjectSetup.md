@@ -45,7 +45,7 @@ Basic New Project Setup
   
 * Select build target. I'll use Android 2.1 API Level 7.  
  
-       ![image5](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/5.png)
+       ![image5](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/5.png)
   
 * Add a package name. The package name I added is: com.android.newproject
 
