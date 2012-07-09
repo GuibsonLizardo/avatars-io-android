@@ -4,7 +4,7 @@ Introduction
 AvatarPickerTutorial is a tutorial project that shows how to use the AvatarPicker component. It contains Chute SDK library, PhotoPicker+ library as well as AvatarPicker library.
 This tutorial enables browsing device gallery photos using the PhotoPicker+ component, as well as social services avatars, selecting a photo and displaying the selected photo and its path.
 
-![image8](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/8.png)![image9](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/9.png)![image10](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/10.png)![image11](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/11.png)![image12](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/12.png)![image13](https://github.com/chute/avatars-io/raw/master/android/AvatarPickerTutorial/screenshots/13.png)
+![image8](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/8.png)![image9](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/9.png)![image10](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/10.png)![image11](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/11.png)![image12](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/12.png)![image13](https://github.com/chute/avatars-io-android/raw/master/AvatarPickerTutorial/screenshots/13.png)
 
 Setup
 ====
