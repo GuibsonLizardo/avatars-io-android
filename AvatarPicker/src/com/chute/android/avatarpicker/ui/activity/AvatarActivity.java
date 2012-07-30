@@ -78,7 +78,7 @@ public class AvatarActivity extends Activity {
 	 * Array of available services.
 	 */
 	public static final String[] SERVICES = new String[] { "Upload",
-			"Facebook", "Twitter", "Instagram", "Flickr", "Picasa", "Gravatar" };
+			"Facebook", "Twitter", "Instagram", "Gravatar" };
 
 	/**
 	 * Temporary file for image cropping.
