@@ -162,19 +162,11 @@ public class UploadSingleton extends Observable {
 		}
 
 		@Override
-		public void onUploadStarted(String assetId, String filepath,
-				Bitmap thumbnail) {
+		public void onUploadStarted(GCAssetModel asset, Bitmap thumbnail) {
 			Log.d(TAG, "Upload started");
 			setSyncIndicator(true, thumbnail);
 			t = new Timer();
 			t.schedule(new ProgressTask(), DELAY, DELAY);
-		}
-
-		@Override
-		public void onUploadFinished(String assetId, String filepath) {
-			Log.d(TAG, "Upload finished");
-			t.cancel();
-			setSyncIndicator(false, null);
 		}
 
 		@Override
@@ -241,6 +233,13 @@ public class UploadSingleton extends Observable {
 			} catch (Exception e) {
 				Log.d(TAG, "", e);
 			}
+		}
+
+		@Override
+		public void onUploadFinished(GCAssetModel assetModel) {
+			Log.d(TAG, "Upload finished");
+			t.cancel();
+			setSyncIndicator(false, null);
 		}
 
 	}
