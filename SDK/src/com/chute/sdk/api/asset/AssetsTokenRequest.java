@@ -26,13 +26,13 @@
 package com.chute.sdk.api.asset;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.chute.sdk.api.GCHttpCallback;
@@ -47,8 +47,11 @@ public class AssetsTokenRequest<T> extends GCStringBodyHttpRequestImpl<T> {
 	private final GCLocalAssetCollection ac;
 	private final ArrayList<String> chuteIds;
 
-	public AssetsTokenRequest(final Context context, final GCLocalAssetCollection assetCollection, final ArrayList<String> chuteIds,
-			final GCHttpResponseParser<T> parser, final GCHttpCallback<T> callback) {
+	public AssetsTokenRequest(final Context context,
+			final GCLocalAssetCollection assetCollection,
+			final ArrayList<String> chuteIds,
+			final GCHttpResponseParser<T> parser,
+			final GCHttpCallback<T> callback) {
 		super(context, parser, callback);
 		this.ac = assetCollection;
 		this.chuteIds = chuteIds;
@@ -67,6 +70,9 @@ public class AssetsTokenRequest<T> extends GCStringBodyHttpRequestImpl<T> {
 				obj.put("filename", asset.getFile().getPath());
 				obj.put("md5", asset.calculateFileMD5());
 				obj.put("size", asset.getSize());
+				if (TextUtils.isEmpty(asset.getIdentifier()) == false) {
+					obj.put("type", asset.getIdentifier());
+				}
 				Log.d(TAG, ac.toString());
 				filesArray.put(obj);
 			}
@@ -77,7 +83,7 @@ public class AssetsTokenRequest<T> extends GCStringBodyHttpRequestImpl<T> {
 			root.put("data", dataObject);
 			setBody(root.toString());
 		} catch (final JSONException e) {
-			Logger.d(TAG, "",e);
+			Logger.d(TAG, "", e);
 		}
 	}
 

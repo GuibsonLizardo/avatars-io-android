@@ -34,7 +34,6 @@ import com.chute.sdk.exceptions.GCHttpException;
 import com.chute.sdk.model.GCAccountStore;
 import com.chute.sdk.parsers.base.GCHttpResponseParser;
 import com.chute.sdk.utils.GCConstants;
-import com.chute.sdk.utils.rest.GCBaseRestClient.RequestMethod;
 import com.chute.sdk.utils.rest.GCRest;
 
 public abstract class GCBaseHttpRequestImpl<T> implements GCHttpRequest {

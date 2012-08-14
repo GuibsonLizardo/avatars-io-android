@@ -36,53 +36,64 @@ import com.chute.sdk.model.response.GCUploadTokenResponse;
 import com.chute.sdk.parsers.base.GCBaseUploadInfoParser;
 import com.chute.sdk.parsers.base.GCBaseUserModelParser;
 import com.chute.sdk.parsers.base.GCHttpResponseParser;
+import com.chute.sdk.utils.Logger;
 
 public class GCTokenObjectParser implements GCHttpResponseParser<GCUploadTokenResponse> {
 
-	@Override
-	public GCUploadTokenResponse parse(final String responseBody) throws JSONException {
-		final GCUploadTokenResponse response =new GCUploadTokenResponse();
-		
-		final Meta meta = new Meta();
-		JSONObject dataRoot = new JSONObject(responseBody);
-		meta.setVersion(dataRoot.getJSONObject("meta").getInt("version"));
-		meta.setCode(dataRoot.getJSONObject("meta").getInt("code"));
-		
-		dataRoot = dataRoot.getJSONObject("data");
-		
-		JSONArray assetsArray = dataRoot.getJSONArray("new_assets");
-		JSONObject obj;
-		for (int i = 0; i < assetsArray.length(); i++) {
-			obj = assetsArray.getJSONObject(i);
-			
-			final GCAssetModel assetModel = parseTokenAsset(obj);
-			response.getAssetCollection().add(assetModel);
-			
-			final GCUploadToken token = new GCUploadToken();
-			token.setMeta(meta);
-			token.setUploadInfo(GCBaseUploadInfoParser.parse(obj.optJSONObject("upload_info")));
-			token.setId(dataRoot.getString("id"));
-			response.getToken().add(token);
-		}
-		
-		assetsArray = dataRoot.getJSONArray("existing_assets");
-		for (int i = 0; i < assetsArray.length(); i++) {
-			obj = assetsArray.getJSONObject(i);
-			final GCAssetModel assetModel = parseTokenAsset(obj);
-			response.getAssetCollection().add(assetModel);
-		}
-		return response;
+    private static final String TAG = GCTokenObjectParser.class.getSimpleName();
+
+    @Override
+    public GCUploadTokenResponse parse(final String responseBody) throws JSONException {
+	final GCUploadTokenResponse response = new GCUploadTokenResponse();
+
+	final Meta meta = new Meta();
+	JSONObject dataRoot = new JSONObject(responseBody);
+	meta.setVersion(dataRoot.getJSONObject("meta").getInt("version"));
+	meta.setCode(dataRoot.getJSONObject("meta").getInt("code"));
+
+	dataRoot = dataRoot.getJSONObject("data");
+
+	JSONArray assetsArray = dataRoot.getJSONArray("new_assets");
+	JSONObject obj;
+
+	response.setUploadId(dataRoot.getString("id"));
+	for (int i = 0; i < assetsArray.length(); i++) {
+	    obj = assetsArray.getJSONObject(i);
+
+	    final GCAssetModel assetModel = parseTokenAsset(obj);
+	    response.getAssetCollection().add(assetModel);
+
+	    final GCUploadToken token = new GCUploadToken();
+	    token.setMeta(meta);
+	    token.setUploadInfo(GCBaseUploadInfoParser.parse(obj.optJSONObject("upload_info")));
+	    response.getToken().add(token);
 	}
 
-	private GCAssetModel parseTokenAsset(final JSONObject obj) throws JSONException {
-		final GCAssetModel assetModel = new GCAssetModel();
-		assetModel.setId(obj.getString("id"));
-		assetModel.setUrl(obj.getString("url"));
-		assetModel.setPortrait(obj.getBoolean("is_portrait"));
-		
-		//	assetModel.setSourceUrl(dataRoot.getString("source_url"));
-		
-		assetModel.setUser(GCBaseUserModelParser.parse(obj.getJSONObject("user")));
-		return assetModel;
+	assetsArray = dataRoot.getJSONArray("existing_assets");
+	for (int i = 0; i < assetsArray.length(); i++) {
+	    obj = assetsArray.getJSONObject(i);
+	    final GCAssetModel assetModel = parseTokenAsset(obj);
+	    response.getAssetCollection().add(assetModel);
+
+	    final GCUploadToken token = new GCUploadToken();
+	    token.setMeta(meta);
+	    response.getToken().add(token);
 	}
+
+	return response;
+    }
+
+    private GCAssetModel parseTokenAsset(final JSONObject obj) throws JSONException {
+	Logger.d(TAG, obj.toString());
+	final GCAssetModel assetModel = new GCAssetModel();
+	assetModel.setId(obj.getString("id"));
+	assetModel.setUrl(obj.getString("url"));
+	assetModel.setPortrait(obj.getBoolean("is_portrait"));
+	assetModel.setShortcut(obj.getString("shortcut"));
+
+	// assetModel.setSourceUrl(dataRoot.getString("source_url"));
+
+	assetModel.setUser(GCBaseUserModelParser.parse(obj.getJSONObject("user")));
+	return assetModel;
+    }
 }

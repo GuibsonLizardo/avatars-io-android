@@ -27,6 +27,8 @@ package com.chute.sdk.api.asset;
 
 import android.graphics.Bitmap;
 
+import com.chute.sdk.model.GCAssetModel;
+
 /**
  * <b> IMPORTANT!! runs the updates in the thread that executed the request</b>
  * 
@@ -34,36 +36,35 @@ import android.graphics.Bitmap;
  * 
  */
 public interface GCUploadProgressListener {
-	/**
-	 * This is triggered when the
-	 * 
-	 * @param id
-	 *            the id of the asset you are currently uploading
-	 * @param filepath
-	 *            the filepath of the asset
-	 * @param thumbnail
-	 *            a small thumbnail that will be created from the asset before
-	 *            the upload starts
-	 */
-	public void onUploadStarted(String id, String filepath,
-			final Bitmap thumbnail);
+    /**
+     * This is triggered when the
+     * 
+     * @param id
+     *            the id of the asset you are currently uploading
+     * @param filepath
+     *            the filepath of the asset
+     * @param thumbnail
+     *            a small thumbnail that will be created from the asset before
+     *            the upload starts
+     */
+    public void onUploadStarted(GCAssetModel asset, final Bitmap thumbnail);
 
-	/**
-	 * @param total
-	 *            the total size of the asset
-	 * @param current
-	 *            the ammount of data uploaded
-	 */
-	public void onProgress(long total, long current);
+    /**
+     * @param total
+     *            the total size of the asset
+     * @param current
+     *            the ammount of data uploaded
+     */
+    public void onProgress(long total, long current);
 
-	/**
-	 * This triggers when the upload has finished, it doesnt carry the
-	 * information about the status of the upload request
-	 * 
-	 * @param id
-	 *            the id of the asset
-	 * @param filepath
-	 *            the filepath of the asset
-	 */
-	public void onUploadFinished(String id, String filepath);
+    /**
+     * This triggers when the upload has finished, it doesnt carry the
+     * information about the status of the upload request
+     * 
+     * @param id
+     *            the id of the asset
+     * @param filepath
+     *            the filepath of the asset
+     */
+    public void onUploadFinished(GCAssetModel assetModel);
 }

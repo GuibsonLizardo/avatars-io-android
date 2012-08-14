@@ -8,41 +8,49 @@ import com.chute.sdk.model.GCUploadToken;
 
 public class GCUploadTokenResponse {
 
-	private GCAssetCollection assetCollection = new GCAssetCollection();
+    private GCAssetCollection assetCollection = new GCAssetCollection();
 
-	private List<GCUploadToken> token = new ArrayList<GCUploadToken>();
+    private List<GCUploadToken> token = new ArrayList<GCUploadToken>();
 
-	
-	
-	public GCUploadTokenResponse() {
-		super();
-	}
+    private String uploadId;
 
-	public GCAssetCollection getAssetCollection() {
-		return assetCollection;
-	}
+    public GCUploadTokenResponse() {
+	super();
+    }
 
-	public void setAssetCollection(GCAssetCollection assetCollection) {
-		this.assetCollection = assetCollection;
-	}
+    public GCAssetCollection getAssetCollection() {
+	return assetCollection;
+    }
 
-	public List<GCUploadToken> getToken() {
-		return token;
-	}
-	public void setToken(List<GCUploadToken> token) {
-		this.token = token;
-	}
+    public void setAssetCollection(GCAssetCollection assetCollection) {
+	this.assetCollection = assetCollection;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("GCUploadTokenResponse [assetCollection=");
-		builder.append(assetCollection);
-		builder.append(", token=");
-		builder.append(token);
-		builder.append("]");
-		return builder.toString();
-	}
-	
-	
+    public List<GCUploadToken> getToken() {
+	return token;
+    }
+
+    public void setToken(List<GCUploadToken> token) {
+	this.token = token;
+    }
+
+    public String getUploadId() {
+	return uploadId;
+    }
+
+    public void setUploadId(String uploadId) {
+	this.uploadId = uploadId;
+    }
+
+    @Override
+    public String toString() {
+	StringBuilder builder = new StringBuilder();
+	builder.append("GCUploadTokenResponse [assetCollection=");
+	builder.append(assetCollection);
+	builder.append(", token=");
+	builder.append(token);
+	builder.append("]");
+	return builder.toString();
+    }
+
 }

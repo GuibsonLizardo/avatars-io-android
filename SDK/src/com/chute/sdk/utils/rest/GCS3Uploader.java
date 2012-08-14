@@ -31,22 +31,17 @@ import java.io.IOException;
 
 import org.apache.http.client.methods.HttpPut;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
-import android.util.Log;
-
 import com.chute.sdk.api.asset.GCUploadProgressListener;
 import com.chute.sdk.model.GCHttpRequestParameters;
 import com.chute.sdk.model.GCUploadToken;
 import com.chute.sdk.utils.rest.entities.CountingInputStreamEntity;
 import com.chute.sdk.utils.rest.entities.CountingInputStreamEntity.UploadListener;
-import com.darko.imagedownloader.Utils;
 
 public class GCS3Uploader extends GCBaseRestClient {
 
 	private static final int UPLOAD_SOCKET_TIMEOUT = 50 * 1000;
 
+	@SuppressWarnings("unused")
 	private static final String TAG = GCS3Uploader.class.getSimpleName();
 
 	private final GCUploadProgressListener onProgressUpdate;
@@ -59,25 +54,7 @@ public class GCS3Uploader extends GCBaseRestClient {
 	public void startUpload(GCUploadToken token) throws IOException {
 		this.token = token;
 		setUrl(token.getUploadInfo().getUploadUrl());
-		if (onProgressUpdate != null) {
-			try {
-				Options decodeInBounds = Utils.decodeInBounds(new File(token
-						.getUploadInfo().getFilepath()), 75);
-				final Bitmap thumbnail = BitmapFactory.decodeFile(token
-						.getUploadInfo().getFilepath(), decodeInBounds);
-				onProgressUpdate.onUploadStarted(token.getId(), token
-						.getUploadInfo().getFilepath(), thumbnail);
-			} catch (Exception e) {
-				Log.w(TAG, "", e);
-				onProgressUpdate.onUploadStarted(token.getId(), token
-						.getUploadInfo().getFilepath(), null);
-			}
-		}
 		startUpload();
-		if (onProgressUpdate != null) {
-			onProgressUpdate.onUploadFinished(token.getId(), token
-					.getUploadInfo().getFilepath());
-		}
 	}
 
 	private void startUpload() throws IOException {
