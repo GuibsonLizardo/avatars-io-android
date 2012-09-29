@@ -50,7 +50,7 @@ public class AvatarTokenObjectParser implements
 		token.setMeta(meta);
 
 		obj = obj.getJSONObject("data");
-		token.setSourceUrl(obj.getString("source_url"));
+		token.setSourceUrl(obj.getJSONObject("data").getString("source_url"));
 		token.setUrl(obj.getString("url"));
 		token.setId(obj.getString("id"));
 		JSONObject info = obj.optJSONObject("upload_info");
