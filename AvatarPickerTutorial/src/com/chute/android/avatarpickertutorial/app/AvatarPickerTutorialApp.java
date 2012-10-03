@@ -10,6 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 package com.chute.android.avatarpickertutorial.app;
 
 import com.chute.android.avatarpicker.ui.app.AvatarPickerApp;
+import com.chute.sdk.model.GCAccountStore;
 
 /**
  * The {@link AvatarPickerTutorialApp} class is the extended Application class.
@@ -21,4 +22,10 @@ public class AvatarPickerTutorialApp extends AvatarPickerApp {
 
 	public static final String TAG = AvatarPickerTutorialApp.class
 			.getSimpleName();
+	
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		GCAccountStore.setAppId(getApplicationContext(), "4f15d1f138ecef6af9000004");
+	}
 }

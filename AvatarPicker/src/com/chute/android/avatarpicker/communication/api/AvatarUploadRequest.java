@@ -35,6 +35,7 @@ import com.chute.sdk.api.GCHttpCallbackImpl;
 import com.chute.sdk.api.GCHttpRequest;
 import com.chute.sdk.api.GCHttpRequestStore;
 import com.chute.sdk.api.asset.AssetsTokenRequest;
+import com.chute.sdk.api.asset.AssetsUploadCompleteRequest;
 import com.chute.sdk.api.asset.GCUploadProgressListener;
 import com.chute.sdk.model.GCAssetModel;
 import com.chute.sdk.model.GCLocalAssetModel;
