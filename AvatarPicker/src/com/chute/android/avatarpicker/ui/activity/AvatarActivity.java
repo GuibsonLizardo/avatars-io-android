@@ -137,7 +137,7 @@ public class AvatarActivity extends Activity {
 				/**
 				 * If Gravatar service chosen, open dialog for e-mail submition.
 				 */
-			} else if (position == 6) {
+			} else if (position == 4) {
 				gravatarDialog().show();
 				/**
 				 * For any other service, start the authentication activity.
@@ -173,9 +173,9 @@ public class AvatarActivity extends Activity {
 	 *            - {@link GCAccountModel} user ID.
 	 */
 	public void serviceClicked(String accountId, String accountName, String uid) {
-		String url = String.format(
-				com.chute.android.avatarpicker.communication.AvatarRestConstants.URL_GET_AVATAR,
-				accountName, uid);
+		String url = String
+				.format(com.chute.android.avatarpicker.communication.AvatarRestConstants.URL_GET_AVATAR,
+						accountName, uid);
 		switch (accountType) {
 		case FACEBOOK:
 			IntentUtil.deliverDataToInitialActivity(AvatarActivity.this,

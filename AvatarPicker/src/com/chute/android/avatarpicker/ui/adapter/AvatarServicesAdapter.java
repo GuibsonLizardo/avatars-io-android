@@ -31,9 +31,9 @@ import com.darko.imagedownloader.ImageLoader;
 
 /**
  * The {@link AvatarServicesAdapter} class fills the GridView with ImageViews
- * representing avatar services such as: Facebook, Twitter, Picasa, Flickr,
- * Instagram adn Gravatar. NOTE: It must be called using the Activity context
- * instead of Application context.
+ * representing avatar services such as: Facebook, Twitter, Instagram and
+ * Gravatar. NOTE: It must be called using the Activity context instead of
+ * Application context.
  */
 public class AvatarServicesAdapter extends BaseAdapter {
 
@@ -44,7 +44,8 @@ public class AvatarServicesAdapter extends BaseAdapter {
 	 */
 	private Context context;
 	/**
-	 * Supplies information about a display, such as its size, density, and font scaling.
+	 * Supplies information about a display, such as its size, density, and font
+	 * scaling.
 	 */
 	private final DisplayMetrics metrics;
 	/**
@@ -60,8 +61,7 @@ public class AvatarServicesAdapter extends BaseAdapter {
 	 */
 	public ImageDaoImpl imageDao;
 	/**
-	 * Array of services: Upload, Facebook, Twitter, Flickr, PIcasa, Instagram,
-	 * Gravatar.
+	 * Array of services: Upload, Facebook, Twitter, Instagram, Gravatar.
 	 */
 	private final String[] serviceValues;
 	/**
@@ -216,46 +216,6 @@ public class AvatarServicesAdapter extends BaseAdapter {
 				serviceIcon.setBackgroundResource(R.drawable.twitter);
 				serviceSmall.setVisibility(View.INVISIBLE);
 			}
-//		} else if (service.equals("Flickr")) {
-//			serviceIcon.setTag(AccountType.FLICKR);
-//			if (GCPreferenceUtil.get().hasAccountId(
-//					(AccountType) serviceIcon.getTag())) {
-//				serviceTxt.setVisibility(View.INVISIBLE);
-//				serviceSmall.setVisibility(View.VISIBLE);
-//				serviceSmall.setBackgroundResource(R.drawable.flickr_small);
-//				serviceIcon.setBackgroundResource(R.drawable.flickr);
-//				// String url = String.format(
-//				// com.chute.android.avatarpicker.api.Constants.URL_GET_AVATAR,
-//				// ((AccountType)serviceIcon.getTag()).getName(),
-//				// GCPreferenceUtil.get().getUidForAccount((AccountType)serviceIcon.getTag()));
-//				// imageLoader.displayImage(url.concat("?size=large"),
-//				// serviceIcon);
-//			} else {
-//				serviceTxt.setText(context.getResources().getString(
-//						R.string.txt_flickr));
-//				serviceIcon.setBackgroundResource(R.drawable.flickr);
-//				serviceSmall.setVisibility(View.INVISIBLE);
-//			}
-//		} else if (service.equals("Picasa")) {
-//			serviceIcon.setTag(AccountType.PICASA);
-//			if (GCPreferenceUtil.get().hasAccountId(
-//					(AccountType) serviceIcon.getTag())) {
-//				serviceTxt.setVisibility(View.INVISIBLE);
-//				serviceSmall.setVisibility(View.VISIBLE);
-//				serviceSmall.setBackgroundResource(R.drawable.picasa_small);
-//				serviceIcon.setBackgroundResource(R.drawable.picasa);
-//				// String url = String.format(
-//				// com.chute.android.avatarpicker.api.Constants.URL_GET_AVATAR,
-//				// ((AccountType)serviceIcon.getTag()).getName(),
-//				// GCPreferenceUtil.get().getUidForAccount((AccountType)serviceIcon.getTag()));
-//				// imageLoader.displayImage(url.concat("?size=large"),
-//				// serviceIcon);
-//			} else {
-//				serviceTxt.setText(context.getResources().getString(
-//						R.string.txt_picasa));
-//				serviceIcon.setBackgroundResource(R.drawable.picasa);
-//				serviceSmall.setVisibility(View.INVISIBLE);
-//			}
 		} else if (service.equals("Instagram")) {
 			serviceIcon.setTag(AccountType.INSTAGRAM);
 			if (GCPreferenceUtil.get().hasAccountId(
